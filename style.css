@@ -1,0 +1,15 @@
+@font-face {
+    font-family: Jersey;
+    src: url(Jersey20-Regular.ttf);
+  }
+
+button{
+    border-radius: 7%;
+    border-style: none;
+    background-color: aqua;
+    color: black;
+    font-family: Jersey;
+    font-weight: bold;
+    font-size: large;
+    margin: 1%;
+}
