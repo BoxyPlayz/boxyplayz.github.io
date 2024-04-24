@@ -12,4 +12,5 @@ button{
     font-weight: bold;
     font-size: large;
     margin: 1%;
+    cursor: pointer;
 }
