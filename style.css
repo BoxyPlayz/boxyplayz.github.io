@@ -14,3 +14,7 @@ button{
     margin: 1%;
     cursor: pointer;
 }
+
+body{
+    background-color: gray;
+}
