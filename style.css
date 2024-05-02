@@ -17,7 +17,5 @@ button{
 
 body{
     background-color: #919191;
-    border-offset: -4%;
-    border-width: 4%;
-    
+    border: 5px solid black;
 }
