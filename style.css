@@ -15,7 +15,7 @@ button{
     cursor: pointer;
 }
 
-body{
+html{
     background-color: #919191;
     border: 5px solid black;
 }
