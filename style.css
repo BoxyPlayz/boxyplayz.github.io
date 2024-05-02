@@ -17,7 +17,7 @@ button{
 
 body{
     background-color: #919191;
-    outline-offset: -4%;
-    outline-width: 4%;
-    otline: true;
+    border-offset: -4%;
+    border-width: 4%;
+    
 }
