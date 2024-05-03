@@ -19,3 +19,24 @@ html{
     background-color: #919191;
     border: 5px solid black;
 }
+
+.column {
+    float: left;
+    width: 30%;
+}
+
+.Columns:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#end button {
+    width: max-content;
+    min-width: 47%;
+}
+
+h1 {
+    font-family: Jersey;
+    text-decoration: underline;
+}
