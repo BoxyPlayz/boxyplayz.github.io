@@ -40,3 +40,7 @@ h1 {
     font-family: Jersey;
     text-decoration: underline;
 }
+
+#searchifr {
+    display: none;
+}
