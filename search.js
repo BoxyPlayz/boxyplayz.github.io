@@ -1,3 +1,6 @@
+let c = 0;
+
+
 function myFunction() {
     // Declare variables
     var input, filter, ul, li, a, i, txtValue;
@@ -17,3 +20,12 @@ function myFunction() {
       }
     }
   }
+
+
+  function boxy() {
+    c++;
+    if (c > 25) {
+      window.open("https://boxyplayz.github.io/BoxStudios/", "_Parent");
+  }
+  console.log("Stop #" + c);
+}
