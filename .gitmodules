@@ -1,3 +1,6 @@
 [submodule "things"]
 	path = things
 	url = https://github.com/BoxyPlayz/things.git
+[submodule "GeometryDash"]
+	path = GeometryDash
+	url = https://github.com/BoxyPlayz/GeometryDash
