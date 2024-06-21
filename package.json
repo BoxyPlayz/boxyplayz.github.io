@@ -7,9 +7,13 @@
     "test": "echo \"Hello World!\"",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "build": "electron-builder --linux --windows --config"
   },
-  "author": "Boxy",
+  "author": {
+    "name": "Boxy",
+    "email": "boxy@myyahoo.com"
+  },
   "license": "ISC",
   "devDependencies": {
     "@electron-forge/cli": "^7.4.0",
@@ -21,9 +25,31 @@
     "@electron-forge/plugin-fuses": "^7.4.0",
     "@electron/fuses": "^1.8.0",
     "electron": "^30.0.9",
+    "electron-builder": "^24.6.4",
     "update-electron-app": "^3.0.0"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1"
+  },
+  "build": {
+    "appId": "com.boxyplayz.desktop",
+    "productName": "Boxy Desktop",
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "apk"
+      ],
+      "category": "Game"
+    },
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "favicon.png"
+    },
+    "portable": {
+      "artifactName": "Boxy Desktop Edition.exe"
+    }
   }
 }
