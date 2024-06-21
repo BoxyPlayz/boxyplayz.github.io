@@ -8,7 +8,8 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "build": "electron-builder --linux --windows --config"
+    "build-win": "electron-builder -w",
+    "build-linux": "electron-builder -l"
   },
   "author": {
     "name": "Boxy",
@@ -25,7 +26,7 @@
     "@electron-forge/plugin-fuses": "^7.4.0",
     "@electron/fuses": "^1.8.0",
     "electron": "^30.0.9",
-    "electron-builder": "^24.6.4",
+    "electron-builder": "^24.13.3",
     "update-electron-app": "^3.0.0"
   },
   "dependencies": {
