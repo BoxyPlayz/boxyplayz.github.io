@@ -4,10 +4,8 @@
   "description": "Desktop App for boxyplayz.github.io",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Hello World!\"",
     "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
+    "build-and-run": "electron-builder -w & \"dist\\Boxy Desktop Edition.exe\"",
     "build-win": "electron-builder -w",
     "build-linux": "electron-builder -l"
   },
@@ -38,7 +36,6 @@
     "linux": {
       "target": [
         "deb",
-        "rpm",
         "apk"
       ],
       "category": "Game"
