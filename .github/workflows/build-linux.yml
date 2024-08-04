@@ -1,4 +1,4 @@
-name: Build
+name: Build on Linux
 
 on:
   workflow_dispatch:
@@ -21,5 +21,4 @@ jobs:
         sudo apt update
         sudo apt install --install-recommends winehq-stable wine-stable:amd64 wine-stable-amd64:amd64 wine-stable-i386:i386
         npm ci
-        npm run build-win
         npm run build-linux
