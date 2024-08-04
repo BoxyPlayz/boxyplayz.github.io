@@ -35,8 +35,7 @@
     "productName": "Boxy Desktop",
     "linux": {
       "target": [
-        "deb",
-        "apk"
+        "deb"
       ],
       "category": "Game"
     },
