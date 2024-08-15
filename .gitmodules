@@ -7,3 +7,6 @@
 [submodule "Cats"]
 	path = Cats
 	url = https://github.com/BoxyPlayz/Cats
+[submodule "Desktop-Games"]
+	path = Desktop-Games
+	url = https://github.com/BoxyPlayz/Desktop-Games.git
