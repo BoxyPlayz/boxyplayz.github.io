@@ -10,3 +10,6 @@
 [submodule "Desktop-Games"]
 	path = Desktop-Games
 	url = https://github.com/BoxyPlayz/Desktop-Games.git
+[submodule "home"]
+	path = home
+	url = https://github.com/BoxyPlayz/home.git
