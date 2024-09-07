@@ -20,20 +20,10 @@ html{
     border: 5px solid black;
 }
 
-.column {
-    float: left;
-    width: 30%;
-}
-
-.Columns:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 #end button {
     width: max-content;
     min-width: 47%;
+    height: max-content;
 }
 
 h1 {
@@ -42,5 +32,14 @@ h1 {
 }
 
 #searchifr {
+    display: none;
+}
+
+body {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
     display: none;
 }
