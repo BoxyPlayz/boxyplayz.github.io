@@ -17,10 +17,10 @@ win.setThumbarButtons([
   {
     tooltip: 'Home',
     icon: nativeImage.createFromPath(path.join(__dirname, 'Home.png')),
-    click () {win.loadFile("index.html");}
+    click () {win.loadFile("games.html");}
   }
 ])
-    win.loadFile('index.html');
+    win.loadFile('games.html');
   }
 
   app.whenReady().then(() => {
