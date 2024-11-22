@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       passwordPrompt.style.display = "none";
       protectedContent.style.display = "block";
       protectedLabel.style.display = "none";
+      document.title = "Press to play"
     }
   
     passwordSubmit.addEventListener("click", () => {
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         passwordPrompt.style.display = "none";
         protectedContent.style.display = "block";
         protectedLabel.style.display = "none";
+      document.title = "Press to play"
       } else {
         alert("Incorrect password. Please try again.");
         passwordInput.value = "";
