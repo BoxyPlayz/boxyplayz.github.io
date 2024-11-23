@@ -6,16 +6,21 @@ FROM node:${NODE_VERSION}-alpine
 
 ENV NODE_ENV production
 
+# No need for build tools for production environment
+# RUN apk add --no-cache python3 make g++  # This has been removed
+
 WORKDIR /usr/src/app/
 
-RUN --mount=type=bind,source=package.json,target=package.json \
-    --mount=type=bind,source=package-lock.json,target=package-lock.json \
-    --mount=type=cache,target=/root/.npm \
-    npm ci --omit=dev
+# Copy only the necessary files for installing production dependencies
+COPY package.json package-lock.json ./ 
+
+# Install only production dependencies (no need for cache clean)
+RUN npm ci --omit=dev
+
+# Copy the rest of the application files
+COPY . .
 
 USER node
-
-COPY . .
 
 EXPOSE 3000
 
