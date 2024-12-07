@@ -8,14 +8,14 @@ import url from "url";
 import mongoose from "mongoose";
 import connectMongo from "connect-mongo";
 
-// MongoDB URL for your session store (replace with your actual MongoDB connection string)
-const mongoURI = "mongodb+srv://user:asfvavra@cluster0.4i7gy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const mongoURI =
+  "mongodb+srv://user:asfvavra@cluster0.4i7gy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const PORT = 3000;
-const SALT_ROUNDS = 8; // Define the cost factor for bcryptjs (adjustable)
+const SALT_ROUNDS = 9; // Define the cost factor for bcryptjs (adjustable)
 
 const app = express();
 
@@ -60,7 +60,7 @@ app.use(morgan(":method :url :status"));
 // Authentication Middleware
 function checkAuth(req, res, next) {
   // Allow access to the '/undefended' path without authentication
-  if (req.path.startsWith("/undefended") || req.path === "/auth.html") {
+  if (req.path.startsWith("/undefended") || req.path === "/auth") {
     return next();
   }
 
@@ -70,7 +70,7 @@ function checkAuth(req, res, next) {
   }
 
   // If not authenticated, redirect to the authentication page
-  res.redirect("/undefended/auth.html");
+  res.redirect("/undefended/index.html");
 }
 
 // In-memory stored hashed password (replace with database in production)
@@ -111,21 +111,28 @@ app.use((req, res, next) => {
 });
 
 // Root route handling
-// Root route handling
 app.get("/", (req, res) => {
   if (!req.session.authenticated) {
     return res.sendFile(path.join(__dirname, "undefended", "index.html")); // Serve the login page if not authenticated
   }
-  res.sendFile(path.join(__dirname, "public", "games.html")); // Serve the main content if authenticated (change this if needed)
+  res.sendFile(path.join(__dirname, "public", "index.html")); // Serve the main content if authenticated (change this if needed)
 });
 
-
 // Auth page route
-app.get("/auth.html", (req, res) => {
+app.get("/auth", (req, res) => {
   if (req.session.authenticated) {
     return res.redirect("/"); // Redirect to the main page if already logged in
   }
   res.sendFile(path.join(__dirname, "undefended", "auth.html"));
+});
+
+//The 404 Route (ALWAYS Keep this as the last route)
+app.get("*", function (req, res) {
+  if (req.session.authenticated) {
+    res.status(404).sendFile(path.join(__dirname, "public/404.html"));
+  } else {
+    res.status(404).sendFile(path.join(__dirname, "undefended/404.html"));
+  }
 });
 
 app.listen(PORT, () => {

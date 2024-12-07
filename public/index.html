@@ -24,56 +24,48 @@
 </head>
 
 <body>
+    <h1 id="time">Time</h1>
+    <div id="search">
+        <span id="bar">
+            <a href="javascript:search()"><span class="material-symbols-outlined">search</span></a>
+            <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+            <select name="Engine" id="SearchEngine">
+                <optgroup label="Normal Sites">
+                    <option value="google" selected>Google</option>
+                    <option value="yahoo">Yahoo</option>
+                    <option value="bing">Bing</option>
+                    <option value="duck">DuckDuckGo</option>
+                    <option value="wiki">Wikipedia</option>
+                </optgroup>
+                <optgroup label="Direct">
+                    <option value="http">HTTP</option>
+                </optgroup>
+            </select>
+        </span>
+    </div>
+    <hr>
+
+
     <div id="GRID">
         <div class="row align-items-center g-2">
             <div class="col-md-4"><a href="gd/Geometry Dash.html"><img src="gd/GD.png" alt="Geometry Dash"></a>
             </div>
-            <div class="col-md-4"><a href="gd/Geometry Dash Meltdown.html"><img src="gd/GDM.png"
-                        alt="Geometry Dash Meltdown"></a></div>
-            <div class="col-md-4"><a href="gd/Geometry Dash Subzero.html"><img src="gd/GDS.png"
-                        alt="Geometry Dash Subzero"></a></div>
-            <div class="col-md-4"><a href="gd/Geometry Dash World.html"><img src="gd/GDW.png"
-                        alt="Geometry Dash World"></a></div>
-        </div>
-        <hr>
-        <div class="row align-items-center g-2">
-            <div class="col-md-4"><a href="hide_and_seek/hide and seek.html"><img src="hide_and_seek/hide_seek.png"
-                        alt="Hide and Seek"></a></div>
-            <div class="col-md-4"><a href="hide_and_seek/hide and seek 2.html"><img src="hide_and_seek/hide_seek_2.png"
-                        alt="Hide and Seek 2"></a></div>
             <div class="col-md-4"><a href="hide_and_seek/hide and seek 3.html"><img src="hide_and_seek/hide_seek_3.png"
                         alt="Hide and Seek 3"></a></div>
-            <div class="col-md-4"><a href="hide_and_seek/hide and seek 4.html"><img src="hide_and_seek/hide_seek_4.png"
-                        alt="Hide and Seek 3"></a></div>
-        </div>
-        <hr>
-        <div class="row align-items-center g-2">
-            <div class="col-md-4"><a href="Editors/Scratch3/index.html"><img src="Editors/Scratch3.png"
-                        alt="Scratch"></a></div>
-            <div class="col-md-4"><a href="Editors/Turbowarp/index.html"><img src="Editors/Turbowarp.jpeg"
-                        alt="Turbowarp"></a></div>
-        </div>
-        <hr>
-        <div class="row align-items-center g-2">
-            <div class="col-md-4"><a href="random/Flying Burrito.html"><img src="random/burrito.png"
-                        alt="Flying Burrito"></a></div>
             <div class="col-md-4"><a href="random/Getting Over It Multiplayer Edition.html"><img
                         src="random/getoveritboxy.png" alt="Getting Over I"></a></div>
             <div class="col-md-4"><a href="random/Watermellon Game.html"><img src="random/MELON.png" alt="MELON"></a>
             </div>
-        </div>
-        <hr>
-        <div class="row align-items-center g-2">
             <div class="col-md-4"><a href="my_games/mmo_cats.html"><img src="my_games/cats.png" alt="Cats"></a>
             </div>
             <div class="col-md-4"><a href="my_games/Taco bug.html"><img src="my_games/tako.png" alt="Taco Bug"></a>
             </div>
-            <div class="col-md-4"><a href="my_games/The Game.html"><img src="my_games/thegam.png" alt="The Game"></a>
-            </div>
         </div>
-    </div>
+        <div class="d-grid">
+            <a href="/games.html"><button class="btn btn-primary btn-block">All Games</button></a>
+        </div>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
