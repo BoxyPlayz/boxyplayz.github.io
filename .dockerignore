@@ -26,3 +26,5 @@
 **/dist
 LICENSE
 README.md
+*.pem
+*.pfx

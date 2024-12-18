@@ -7,6 +7,12 @@ import path from "path";
 import url from "url";
 import mongoose from "mongoose";
 import connectMongo from "connect-mongo";
+import http from "http";
+import https from "https";
+import fs from "fs";
+import timeout from "connect-timeout";
+import helmet from "helmet";
+import compression from "compression";
 
 const mongoURI =
   "mongodb+srv://user:asfvavra@cluster0.4i7gy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -36,9 +42,18 @@ const MongoStore = connectMongo.create({
   ttl: 7 * 24 * 60 * 60, // 7 days (TTL in seconds)
 });
 
-// Middleware for parsing JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(timeout("20s"));
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
+
+app.use(compression());
+
+app.disable("x-powered-by");
 
 // Setup session management with MongoDB session store
 app.use(
@@ -50,6 +65,7 @@ app.use(
     cookie: {
       maxAge: 7 * 24 * 60 * 60 * 1000, // 1 week in milliseconds
     },
+    name: "sessionId",
   })
 );
 
@@ -135,6 +151,27 @@ app.get("*", function (req, res) {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`App Running On http://localhost:${PORT}`);
-});
+// Paths to SSL certificate and private key
+const privateKeyPath = "key.pem";
+const certificatePath = "cert.pem";
+
+let server;
+
+if (fs.existsSync(privateKeyPath) && fs.existsSync(certificatePath)) {
+  const privateKey = fs.readFileSync(privateKeyPath, "utf8");
+  const certificate = fs.readFileSync(certificatePath, "utf8");
+  const credentials = { key: privateKey, cert: certificate };
+
+  const httpsServer = https.createServer(credentials, app);
+  httpsServer.setTimeout(5000);
+  server = httpsServer.listen(PORT, () => {
+    console.log(`HTTPS server listening on port ${PORT}`);
+  });
+} else {
+  console.warn("Certificates not found. Falling back to HTTP.");
+  const httpServer = http.createServer(app);
+  httpServer.setTimeout(5000);
+  server = httpServer.listen(PORT, () => {
+    console.log(`HTTP server listening on port ${PORT}`);
+  });
+}

@@ -20,16 +20,20 @@
     "@electron/fuses": "^1.8.0",
     "electron": "^30.0.9",
     "electron-builder": "^24.13.3",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "snyk": "^1.1294.3"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "compression": "^1.7.5",
     "connect-mongo": "^5.1.0",
+    "connect-timeout": "^1.9.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "electron-squirrel-startup": "^1.0.1",
     "express": "^4.21.1",
     "express-session": "^1.18.1",
+    "helmet": "^8.0.0",
     "mongoose": "^8.8.2",
     "morgan": "^1.10.0"
   },
