@@ -28,3 +28,4 @@ LICENSE
 README.md
 *.pem
 *.pfx
+*.env

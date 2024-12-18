@@ -13,9 +13,9 @@ import fs from "fs";
 import timeout from "connect-timeout";
 import helmet from "helmet";
 import compression from "compression";
+import "dotenv/config";
 
-const mongoURI =
-  "mongodb+srv://user:asfvavra@cluster0.4i7gy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const mongoURI = process.env.mongoURI;
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -99,7 +99,7 @@ async function setHashedPassword(plainPassword) {
 
 // Call this once when setting the password
 // (In production, store the hash in a secure database)
-await setHashedPassword("b4a"); // Replace with your desired password
+await setHashedPassword(process.env.password); // Replace with your desired password
 
 // Login Route
 app.post("/login", async (req, res) => {
