@@ -1,60 +1,22 @@
 {
-  "name": "boxy_desktop",
+  "name": "boxyplayz.github.io",
   "version": "1.0.0",
-  "description": "Desktop App for boxyplayz.github.io",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.mjs",
-    "electron": "electron .",
-    "start": "node server.mjs",
-    "build-and-run": "electron-builder -w & \"dist\\Boxy Desktop Edition.exe\"",
-    "build-win": "electron-builder -w",
-    "build-linux": "electron-builder -l"
+    "start": "vite",
+    "build": "vite build"
   },
-  "author": {
-    "name": "Boxy",
-    "email": "boxy@myyahoo.com"
-  },
+  "author": "Boxy",
   "license": "ISC",
+  "description": "",
   "devDependencies": {
-    "@electron/fuses": "^1.8.0",
-    "electron": "^30.0.9",
-    "electron-builder": "^24.13.3",
-    "nodemon": "^3.1.7",
-    "snyk": "^1.1294.3"
+    "sass": "^1.86.0",
+    "vite": "^6.2.2"
   },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "compression": "^1.7.5",
-    "connect-mongo": "^5.1.0",
-    "connect-timeout": "^1.9.0",
-    "cookie-parser": "^1.4.7",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "electron-squirrel-startup": "^1.0.1",
-    "express": "^4.21.1",
-    "express-session": "^1.18.1",
-    "helmet": "^8.0.0",
-    "mongoose": "^8.8.2",
-    "morgan": "^1.10.0"
-  },
-  "build": {
-    "appId": "com.boxyplayz.desktop",
-    "productName": "Boxy Desktop",
-    "linux": {
-      "target": [
-        "deb"
-      ],
-      "category": "Game"
-    },
-    "win": {
-      "target": [
-        "portable"
-      ],
-      "icon": "favicon.png"
-    },
-    "portable": {
-      "artifactName": "Boxy Desktop Edition.exe"
-    }
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }
