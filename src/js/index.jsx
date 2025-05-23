@@ -1,17 +1,27 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-// Import our custom CSS
 import '../scss/styles.scss';
 
 const Greeting = () => {
-    return <h1 className='text'>Hi. I am boxy. This is where you can see some of my projects</h1>;
+    return <h1 className='text-center'>Hi. I am boxy.</h1>;
+}
+
+const Body = () => {
+    return (
+        <>
+            <div className='list-group'>
+                <a href="computers/" className='list-group-item list-group-item-action'>Computer Things</a>
+            </div>
+        </>
+    );
 }
 
 const App = () => {
     return (
         <div>
             <Greeting />
+            <Body />
         </div>
     );
 }
