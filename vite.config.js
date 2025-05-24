@@ -1,4 +1,5 @@
 import { resolve } from "path";
+import legacy from "@vitejs/plugin-legacy";
 
 export default {
   root: resolve(__dirname, "src"),
