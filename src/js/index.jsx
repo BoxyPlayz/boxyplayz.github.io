@@ -12,7 +12,8 @@ const Body = () => {
         <>
             <div className='list-group'>
                 <a href="HomePage" className='list-group-item list-group-item-action'>My Custom Home Page</a>
-                <a href="computers/" className='list-group-item list-group-item-action'>Computer Things</a>
+                <a href="computers" className='list-group-item list-group-item-action'>Computer Things</a>
+                <a href="lazybones" className='list-group-item list-group-item-action'>LAZYBONES CSS!</a>
             </div>
         </>
     );
