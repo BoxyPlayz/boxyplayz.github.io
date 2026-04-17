@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot } from 'react-dom/client';
 
 import '../scss/styles.scss';
@@ -12,6 +11,7 @@ const Body = () => {
         <>
             <div className='list-group'>
                 <a href="HomePage" className='list-group-item list-group-item-action'>My Custom Home Page</a>
+                <a href="SupremeLearnerPremium" className='list-group-item list-group-item-action'>Supreme Learner Premium</a>
                 <a href="computers" className='list-group-item list-group-item-action'>Computer Things</a>
                 <a href="lazybones" className='list-group-item list-group-item-action'>LAZYBONES CSS!</a>
             </div>
@@ -28,5 +28,5 @@ const App = () => {
     );
 }
 
-const root = createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root')!);
 root.render(<App />);

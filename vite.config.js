@@ -5,7 +5,6 @@ export default {
   root: resolve(__dirname, "src"),
   build: {
     outDir: "../dist",
-    minify: "esbuild",
     sourcemap: false,
     cssCodeSplit: true,
   },
