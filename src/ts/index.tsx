@@ -1,19 +1,33 @@
 import { createRoot } from 'react-dom/client';
 
 import '../scss/styles.scss';
+import { createElement } from 'react';
 
 const Greeting = () => {
-    return <h1 className='text-center'>Hi. I am boxy.</h1>;
+    return (
+        <>
+            <h1 className='text-center'>Hi. I am boxy.</h1>
+            <p className='text-center'>I do things</p>
+        </>
+    );
+}
+
+const LinkedItem = (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+    return createElement("a", {
+        className: "list-group-item list-group-item-action " + props.className,
+        ...props
+    })
 }
 
 const Body = () => {
     return (
         <>
             <div className='list-group'>
-                <a href="HomePage" className='list-group-item list-group-item-action'>My Custom Home Page</a>
-                <a href="SupremeLearnerPremium" className='list-group-item list-group-item-action'>Supreme Learner Premium</a>
-                <a href="computers" className='list-group-item list-group-item-action'>Computer Things</a>
-                <a href="lazybones" className='list-group-item list-group-item-action'>LAZYBONES CSS!</a>
+                <LinkedItem href="HomePage">My Custom Home Page</LinkedItem>
+                <LinkedItem href="SupremeLearnerPremium">Supreme Learner Premium</LinkedItem>
+                <LinkedItem href="computers">Computer Things</LinkedItem>
+                <LinkedItem href="lazybones">LAZYBONES CSS!</LinkedItem>
+                <LinkedItem href="https://github.com/BoxyPlayz/boxy-backrooms">Boxy's Backrooms</LinkedItem>
             </div>
         </>
     );
