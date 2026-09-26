@@ -1,0 +1,10 @@
+{
+	"homepage": "https://modrinth.com/mod/boxys-backrooms",
+	"26.1.2": {
+		"0.0.24": "Urban Expansion"
+	},
+	"promos": {
+		"26.1.2-latest": "0.0.24",
+		"26.1.2-recommended": "0.0.24"
+	}
+}
